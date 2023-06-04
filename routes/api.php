@@ -18,11 +18,13 @@ Route::get('/users/{id}', [AuthController::class, 'show']);
 // search user by name
 Route::get('/users/search/{name}', [AuthController::class, 'search']);
 
+Route::post('/users/items/{id}', [ItemsController::class, 'item_post']);
+
 // protected routes
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
     // items routes
-    Route::post('/users/items/{id}', [ItemsController::class, 'item_post'])->middleware('check_user_ownership');
+    // Route::post('/users/items/{id}', [ItemsController::class, 'item_post'])->middleware('check_user_ownership');
     Route::put('/users/{id}/items/{item_id}', [ItemsController::class, 'update'])->middleware('check_user_ownership');
     Route::delete('/users/{id}/items/{item_id}', [ItemsController::class, 'destroy'])->middleware('check_user_ownership');
     // user routes
