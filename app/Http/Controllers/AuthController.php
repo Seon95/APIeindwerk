@@ -80,8 +80,9 @@ class AuthController extends Controller
                 'email' => $user->email,
                 'created_at' => $user->created_at,
                 'updated_at' => $user->updated_at,
-                'items' => $items,
                 'notifications' => $user->notifications ? json_decode($user->notifications, true) : [],
+
+                'items' => $items,
             ];
         });
 
@@ -102,8 +103,8 @@ class AuthController extends Controller
             'email' => $user->email,
             'created_at' => $user->created_at,
             'updated_at' => $user->updated_at,
-            'items' => $items,
             'notifications' => $user->notifications ? json_decode($user->notifications, true) : [],
+            'items' => $items,
         ]);
     }
 
