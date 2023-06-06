@@ -67,6 +67,9 @@ class AuthController extends Controller
     /**
      * get all users
      */
+    /**
+     * Get all users.
+     */
     public function index()
     {
         $users = User::all()->map(function ($user) {
@@ -78,6 +81,7 @@ class AuthController extends Controller
                 'created_at' => $user->created_at,
                 'updated_at' => $user->updated_at,
                 'items' => $items,
+                'notifications' => $user->notifications ? json_decode($user->notifications, true) : [],
             ];
         });
 
@@ -85,12 +89,13 @@ class AuthController extends Controller
     }
 
     /**
-     * get specified user by id
+     * Get a specific user by ID.
      */
     public function show($id)
     {
         $user = User::findOrFail($id);
         $items = $user->items ? json_decode($user->items, true) : null;
+
         return response()->json([
             'id_account' => $user->id,
             'username' => $user->username,
@@ -98,8 +103,10 @@ class AuthController extends Controller
             'created_at' => $user->created_at,
             'updated_at' => $user->updated_at,
             'items' => $items,
+            'notifications' => $user->notifications ? json_decode($user->notifications, true) : [],
         ]);
     }
+
 
     /**
      * change the information of user by id
