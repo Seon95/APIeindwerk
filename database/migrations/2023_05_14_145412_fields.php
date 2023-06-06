@@ -18,6 +18,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->json('items')->nullable();
+            $table->json('notifications')->nullable(); // Add notifications field
             $table->rememberToken();
             $table->timestamps();
         });
