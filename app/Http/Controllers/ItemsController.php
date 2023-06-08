@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class ItemsController extends Controller
 {
-
     public function update(Request $request, string $id, string $item_id)
     {
         $name = $request->input('name');
@@ -34,7 +34,7 @@ class ItemsController extends Controller
             'name' => $name,
             'description' => $description,
             'quantity' => $quantity,
-            'category_id' => $category_id
+            'category_id' => $category_id,
         ]);
 
         // Retrieve the existing items of the user
@@ -51,15 +51,14 @@ class ItemsController extends Controller
                 'description' => $item->description,
                 'quantity' => $item->quantity,
                 'category_id' => $item->category_id,
-            ]
+                'image' => $item->image,
+            ],
         ]);
     }
 
     /**
      * Delete an item by ID.
      */
-
-
     public function destroy($id, $item_id)
     {
         $user = User::findOrFail($id);
@@ -72,8 +71,6 @@ class ItemsController extends Controller
         $user->save();
         return response()->json(['message' => 'Item deleted successfully'], 200);
     }
-
-
 
     public function item_post(Request $request, $id)
     {
@@ -105,8 +102,11 @@ class ItemsController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageName = time() . '_' . $image->getClientOriginalName();
-            $image->storeAs('images', $imageName, 'public');
-            $itemData['image'] = $imageName;
+
+            // Store the uploaded image
+            $imagePath = $image->storeAs('images', $imageName, 'public');
+
+            $itemData['image'] = $imagePath;
         }
 
         $item = $user->items()->create($itemData);
