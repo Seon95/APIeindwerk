@@ -24,7 +24,7 @@ class AuthController extends Controller
             'username' => $fields['username'],
             'email' => $fields['email'],
             'password' => bcrypt($fields['password']),
-            'notifications' => json_encode([]), // Store as an empty array
+            'notifications' => [],
         ]);
 
         $response = [
