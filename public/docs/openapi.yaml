@@ -26,15 +26,15 @@ paths:
                 username:
                   type: string
                   description: ''
-                  example: expedita
+                  example: dolorem
                 email:
                   type: string
                   description: ''
-                  example: ngoodwin@example.net
+                  example: halvorson.blanche@example.com
                 password:
                   type: string
                   description: ''
-                  example: O$X9g9h8
+                  example: '0*x(EsW\I))aT}K=k}RD'
               required:
                 - username
                 - email
@@ -59,11 +59,11 @@ paths:
                 email:
                   type: string
                   description: ''
-                  example: nweber@example.com
+                  example: buckridge.daisha@example.net
                 password:
                   type: string
                   description: ''
-                  example: 3gN|3|8G$
+                  example: '2}\v8[N!-'
               required:
                 - email
                 - password
@@ -75,34 +75,252 @@ paths:
       description: ''
       parameters: []
       responses:
-        404:
+        500:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  message: 'The route api/users could not be found.'
-                  exception: Symfony\Component\HttpKernel\Exception\NotFoundHttpException
-                  file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php
-                  line: 44
+                  message: "SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ID396978_swappie.notifications' doesn't exist (Connection: mysql, SQL: select * from `notifications` where `notifications`.`notifiable_type` = App\\Models\\User and `notifications`.`notifiable_id` = 1 and `notifications`.`notifiable_id` is not null order by `created_at` desc)"
+                  exception: Illuminate\Database\QueryException
+                  file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Connection.php
+                  line: 793
                   trace:
                     -
-                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php
-                      line: 162
-                      function: handleMatchedRoute
-                      class: Illuminate\Routing\AbstractRouteCollection
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Connection.php
+                      line: 753
+                      function: runQueryCallback
+                      class: Illuminate\Database\Connection
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Connection.php
+                      line: 405
+                      function: run
+                      class: Illuminate\Database\Connection
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php
+                      line: 2718
+                      function: select
+                      class: Illuminate\Database\Connection
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php
+                      line: 2707
+                      function: runSelect
+                      class: Illuminate\Database\Query\Builder
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php
+                      line: 3248
+                      function: 'Illuminate\Database\Query\{closure}'
+                      class: Illuminate\Database\Query\Builder
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php
+                      line: 2706
+                      function: onceWithColumns
+                      class: Illuminate\Database\Query\Builder
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php
+                      line: 717
+                      function: get
+                      class: Illuminate\Database\Query\Builder
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php
+                      line: 701
+                      function: getModels
+                      class: Illuminate\Database\Eloquent\Builder
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/MorphMany.php
+                      line: 33
+                      function: get
+                      class: Illuminate\Database\Eloquent\Builder
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php
+                      line: 590
+                      function: getResults
+                      class: Illuminate\Database\Eloquent\Relations\MorphMany
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php
+                      line: 528
+                      function: getRelationshipFromMethod
+                      class: Illuminate\Database\Eloquent\Model
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php
+                      line: 453
+                      function: getRelationValue
+                      class: Illuminate\Database\Eloquent\Model
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php
+                      line: 2227
+                      function: getAttribute
+                      class: Illuminate\Database\Eloquent\Model
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/app/Http/Controllers/AuthController.php
+                      line: 83
+                      function: __get
+                      class: Illuminate\Database\Eloquent\Model
+                      type: '->'
+                    -
+                      function: 'App\Http\Controllers\{closure}'
+                      class: App\Http\Controllers\AuthController
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Collections/Arr.php
+                      line: 558
+                      function: array_map
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Collections/Collection.php
+                      line: 771
+                      function: map
+                      class: Illuminate\Support\Arr
+                      type: '::'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Collection.php
+                      line: 344
+                      function: map
+                      class: Illuminate\Support\Collection
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/app/Http/Controllers/AuthController.php
+                      line: 75
+                      function: map
+                      class: Illuminate\Database\Eloquent\Collection
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Controller.php
+                      line: 54
+                      function: index
+                      class: App\Http\Controllers\AuthController
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php
+                      line: 43
+                      function: callAction
+                      class: Illuminate\Routing\Controller
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Route.php
+                      line: 259
+                      function: dispatch
+                      class: Illuminate\Routing\ControllerDispatcher
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Route.php
+                      line: 205
+                      function: runController
+                      class: Illuminate\Routing\Route
                       type: '->'
                     -
                       file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php
-                      line: 753
-                      function: match
-                      class: Illuminate\Routing\RouteCollection
+                      line: 798
+                      function: run
+                      class: Illuminate\Routing\Route
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 141
+                      function: 'Illuminate\Routing\{closure}'
+                      class: Illuminate\Routing\Router
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php
+                      line: 50
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 180
+                      function: handle
+                      class: Illuminate\Routing\Middleware\SubstituteBindings
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
+                      line: 152
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
+                      line: 118
+                      function: handleRequest
+                      class: Illuminate\Routing\Middleware\ThrottleRequests
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
+                      line: 80
+                      function: handleRequestUsingNamedLimiter
+                      class: Illuminate\Routing\Middleware\ThrottleRequests
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 180
+                      function: handle
+                      class: Illuminate\Routing\Middleware\ThrottleRequests
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php
+                      line: 25
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 141
+                      function: 'Laravel\Sanctum\Http\Middleware\{closure}'
+                      class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 116
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php
+                      line: 24
+                      function: then
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 180
+                      function: handle
+                      class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 116
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                      line: 797
+                      function: then
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                      line: 776
+                      function: runRouteWithinStack
+                      class: Illuminate\Routing\Router
                       type: '->'
                     -
                       file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php
                       line: 740
-                      function: findRoute
+                      function: runRoute
                       class: Illuminate\Routing\Router
                       type: '->'
                     -
@@ -378,35 +596,253 @@ paths:
                 properties:
                   message:
                     type: string
-                    example: 'The route api/users could not be found.'
+                    example: "SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ID396978_swappie.notifications' doesn't exist (Connection: mysql, SQL: select * from `notifications` where `notifications`.`notifiable_type` = App\\Models\\User and `notifications`.`notifiable_id` = 1 and `notifications`.`notifiable_id` is not null order by `created_at` desc)"
                   exception:
                     type: string
-                    example: Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+                    example: Illuminate\Database\QueryException
                   file:
                     type: string
-                    example: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php
+                    example: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Connection.php
                   line:
                     type: integer
-                    example: 44
+                    example: 793
                   trace:
                     type: array
                     example:
                       -
-                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php
-                        line: 162
-                        function: handleMatchedRoute
-                        class: Illuminate\Routing\AbstractRouteCollection
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Connection.php
+                        line: 753
+                        function: runQueryCallback
+                        class: Illuminate\Database\Connection
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Connection.php
+                        line: 405
+                        function: run
+                        class: Illuminate\Database\Connection
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php
+                        line: 2718
+                        function: select
+                        class: Illuminate\Database\Connection
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php
+                        line: 2707
+                        function: runSelect
+                        class: Illuminate\Database\Query\Builder
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php
+                        line: 3248
+                        function: 'Illuminate\Database\Query\{closure}'
+                        class: Illuminate\Database\Query\Builder
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php
+                        line: 2706
+                        function: onceWithColumns
+                        class: Illuminate\Database\Query\Builder
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php
+                        line: 717
+                        function: get
+                        class: Illuminate\Database\Query\Builder
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php
+                        line: 701
+                        function: getModels
+                        class: Illuminate\Database\Eloquent\Builder
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/MorphMany.php
+                        line: 33
+                        function: get
+                        class: Illuminate\Database\Eloquent\Builder
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php
+                        line: 590
+                        function: getResults
+                        class: Illuminate\Database\Eloquent\Relations\MorphMany
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php
+                        line: 528
+                        function: getRelationshipFromMethod
+                        class: Illuminate\Database\Eloquent\Model
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php
+                        line: 453
+                        function: getRelationValue
+                        class: Illuminate\Database\Eloquent\Model
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php
+                        line: 2227
+                        function: getAttribute
+                        class: Illuminate\Database\Eloquent\Model
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/app/Http/Controllers/AuthController.php
+                        line: 83
+                        function: __get
+                        class: Illuminate\Database\Eloquent\Model
+                        type: '->'
+                      -
+                        function: 'App\Http\Controllers\{closure}'
+                        class: App\Http\Controllers\AuthController
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Collections/Arr.php
+                        line: 558
+                        function: array_map
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Collections/Collection.php
+                        line: 771
+                        function: map
+                        class: Illuminate\Support\Arr
+                        type: '::'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Collection.php
+                        line: 344
+                        function: map
+                        class: Illuminate\Support\Collection
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/app/Http/Controllers/AuthController.php
+                        line: 75
+                        function: map
+                        class: Illuminate\Database\Eloquent\Collection
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Controller.php
+                        line: 54
+                        function: index
+                        class: App\Http\Controllers\AuthController
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php
+                        line: 43
+                        function: callAction
+                        class: Illuminate\Routing\Controller
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Route.php
+                        line: 259
+                        function: dispatch
+                        class: Illuminate\Routing\ControllerDispatcher
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Route.php
+                        line: 205
+                        function: runController
+                        class: Illuminate\Routing\Route
                         type: '->'
                       -
                         file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php
-                        line: 753
-                        function: match
-                        class: Illuminate\Routing\RouteCollection
+                        line: 798
+                        function: run
+                        class: Illuminate\Routing\Route
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 141
+                        function: 'Illuminate\Routing\{closure}'
+                        class: Illuminate\Routing\Router
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php
+                        line: 50
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 180
+                        function: handle
+                        class: Illuminate\Routing\Middleware\SubstituteBindings
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
+                        line: 152
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
+                        line: 118
+                        function: handleRequest
+                        class: Illuminate\Routing\Middleware\ThrottleRequests
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
+                        line: 80
+                        function: handleRequestUsingNamedLimiter
+                        class: Illuminate\Routing\Middleware\ThrottleRequests
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 180
+                        function: handle
+                        class: Illuminate\Routing\Middleware\ThrottleRequests
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php
+                        line: 25
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 141
+                        function: 'Laravel\Sanctum\Http\Middleware\{closure}'
+                        class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 116
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php
+                        line: 24
+                        function: then
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 180
+                        function: handle
+                        class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 116
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                        line: 797
+                        function: then
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                        line: 776
+                        function: runRouteWithinStack
+                        class: Illuminate\Routing\Router
                         type: '->'
                       -
                         file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php
                         line: 740
-                        function: findRoute
+                        function: runRoute
                         class: Illuminate\Routing\Router
                         type: '->'
                       -
@@ -684,16 +1120,16 @@ paths:
                       properties:
                         file:
                           type: string
-                          example: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php
+                          example: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Connection.php
                         line:
                           type: integer
-                          example: 162
+                          example: 753
                         function:
                           type: string
-                          example: handleMatchedRoute
+                          example: runQueryCallback
                         class:
                           type: string
-                          example: Illuminate\Routing\AbstractRouteCollection
+                          example: Illuminate\Database\Connection
                         type:
                           type: string
                           example: '->'
@@ -707,34 +1143,226 @@ paths:
       description: ''
       parameters: []
       responses:
-        404:
+        500:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  message: 'The route api/users/saepe could not be found.'
-                  exception: Symfony\Component\HttpKernel\Exception\NotFoundHttpException
-                  file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php
-                  line: 44
+                  message: "SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ID396978_swappie.notifications' doesn't exist (Connection: mysql, SQL: select * from `notifications` where `notifications`.`notifiable_type` = App\\Models\\User and `notifications`.`notifiable_id` = 1 and `notifications`.`notifiable_id` is not null order by `created_at` desc)"
+                  exception: Illuminate\Database\QueryException
+                  file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Connection.php
+                  line: 793
                   trace:
                     -
-                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php
-                      line: 162
-                      function: handleMatchedRoute
-                      class: Illuminate\Routing\AbstractRouteCollection
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Connection.php
+                      line: 753
+                      function: runQueryCallback
+                      class: Illuminate\Database\Connection
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Connection.php
+                      line: 405
+                      function: run
+                      class: Illuminate\Database\Connection
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php
+                      line: 2718
+                      function: select
+                      class: Illuminate\Database\Connection
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php
+                      line: 2707
+                      function: runSelect
+                      class: Illuminate\Database\Query\Builder
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php
+                      line: 3248
+                      function: 'Illuminate\Database\Query\{closure}'
+                      class: Illuminate\Database\Query\Builder
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php
+                      line: 2706
+                      function: onceWithColumns
+                      class: Illuminate\Database\Query\Builder
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php
+                      line: 717
+                      function: get
+                      class: Illuminate\Database\Query\Builder
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php
+                      line: 701
+                      function: getModels
+                      class: Illuminate\Database\Eloquent\Builder
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/MorphMany.php
+                      line: 33
+                      function: get
+                      class: Illuminate\Database\Eloquent\Builder
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php
+                      line: 590
+                      function: getResults
+                      class: Illuminate\Database\Eloquent\Relations\MorphMany
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php
+                      line: 528
+                      function: getRelationshipFromMethod
+                      class: Illuminate\Database\Eloquent\Model
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php
+                      line: 453
+                      function: getRelationValue
+                      class: Illuminate\Database\Eloquent\Model
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php
+                      line: 2227
+                      function: getAttribute
+                      class: Illuminate\Database\Eloquent\Model
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/app/Http/Controllers/AuthController.php
+                      line: 106
+                      function: __get
+                      class: Illuminate\Database\Eloquent\Model
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Controller.php
+                      line: 54
+                      function: show
+                      class: App\Http\Controllers\AuthController
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php
+                      line: 43
+                      function: callAction
+                      class: Illuminate\Routing\Controller
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Route.php
+                      line: 259
+                      function: dispatch
+                      class: Illuminate\Routing\ControllerDispatcher
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Route.php
+                      line: 205
+                      function: runController
+                      class: Illuminate\Routing\Route
                       type: '->'
                     -
                       file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php
-                      line: 753
-                      function: match
-                      class: Illuminate\Routing\RouteCollection
+                      line: 798
+                      function: run
+                      class: Illuminate\Routing\Route
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 141
+                      function: 'Illuminate\Routing\{closure}'
+                      class: Illuminate\Routing\Router
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php
+                      line: 50
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 180
+                      function: handle
+                      class: Illuminate\Routing\Middleware\SubstituteBindings
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
+                      line: 152
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
+                      line: 118
+                      function: handleRequest
+                      class: Illuminate\Routing\Middleware\ThrottleRequests
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
+                      line: 80
+                      function: handleRequestUsingNamedLimiter
+                      class: Illuminate\Routing\Middleware\ThrottleRequests
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 180
+                      function: handle
+                      class: Illuminate\Routing\Middleware\ThrottleRequests
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php
+                      line: 25
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 141
+                      function: 'Laravel\Sanctum\Http\Middleware\{closure}'
+                      class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 116
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php
+                      line: 24
+                      function: then
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 180
+                      function: handle
+                      class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 116
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                      line: 797
+                      function: then
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                      line: 776
+                      function: runRouteWithinStack
+                      class: Illuminate\Routing\Router
                       type: '->'
                     -
                       file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php
                       line: 740
-                      function: findRoute
+                      function: runRoute
                       class: Illuminate\Routing\Router
                       type: '->'
                     -
@@ -1010,35 +1638,227 @@ paths:
                 properties:
                   message:
                     type: string
-                    example: 'The route api/users/saepe could not be found.'
+                    example: "SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ID396978_swappie.notifications' doesn't exist (Connection: mysql, SQL: select * from `notifications` where `notifications`.`notifiable_type` = App\\Models\\User and `notifications`.`notifiable_id` = 1 and `notifications`.`notifiable_id` is not null order by `created_at` desc)"
                   exception:
                     type: string
-                    example: Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+                    example: Illuminate\Database\QueryException
                   file:
                     type: string
-                    example: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php
+                    example: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Connection.php
                   line:
                     type: integer
-                    example: 44
+                    example: 793
                   trace:
                     type: array
                     example:
                       -
-                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php
-                        line: 162
-                        function: handleMatchedRoute
-                        class: Illuminate\Routing\AbstractRouteCollection
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Connection.php
+                        line: 753
+                        function: runQueryCallback
+                        class: Illuminate\Database\Connection
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Connection.php
+                        line: 405
+                        function: run
+                        class: Illuminate\Database\Connection
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php
+                        line: 2718
+                        function: select
+                        class: Illuminate\Database\Connection
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php
+                        line: 2707
+                        function: runSelect
+                        class: Illuminate\Database\Query\Builder
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php
+                        line: 3248
+                        function: 'Illuminate\Database\Query\{closure}'
+                        class: Illuminate\Database\Query\Builder
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php
+                        line: 2706
+                        function: onceWithColumns
+                        class: Illuminate\Database\Query\Builder
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php
+                        line: 717
+                        function: get
+                        class: Illuminate\Database\Query\Builder
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php
+                        line: 701
+                        function: getModels
+                        class: Illuminate\Database\Eloquent\Builder
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/MorphMany.php
+                        line: 33
+                        function: get
+                        class: Illuminate\Database\Eloquent\Builder
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php
+                        line: 590
+                        function: getResults
+                        class: Illuminate\Database\Eloquent\Relations\MorphMany
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php
+                        line: 528
+                        function: getRelationshipFromMethod
+                        class: Illuminate\Database\Eloquent\Model
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php
+                        line: 453
+                        function: getRelationValue
+                        class: Illuminate\Database\Eloquent\Model
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php
+                        line: 2227
+                        function: getAttribute
+                        class: Illuminate\Database\Eloquent\Model
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/app/Http/Controllers/AuthController.php
+                        line: 106
+                        function: __get
+                        class: Illuminate\Database\Eloquent\Model
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Controller.php
+                        line: 54
+                        function: show
+                        class: App\Http\Controllers\AuthController
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php
+                        line: 43
+                        function: callAction
+                        class: Illuminate\Routing\Controller
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Route.php
+                        line: 259
+                        function: dispatch
+                        class: Illuminate\Routing\ControllerDispatcher
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Route.php
+                        line: 205
+                        function: runController
+                        class: Illuminate\Routing\Route
                         type: '->'
                       -
                         file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php
-                        line: 753
-                        function: match
-                        class: Illuminate\Routing\RouteCollection
+                        line: 798
+                        function: run
+                        class: Illuminate\Routing\Route
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 141
+                        function: 'Illuminate\Routing\{closure}'
+                        class: Illuminate\Routing\Router
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php
+                        line: 50
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 180
+                        function: handle
+                        class: Illuminate\Routing\Middleware\SubstituteBindings
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
+                        line: 152
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
+                        line: 118
+                        function: handleRequest
+                        class: Illuminate\Routing\Middleware\ThrottleRequests
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
+                        line: 80
+                        function: handleRequestUsingNamedLimiter
+                        class: Illuminate\Routing\Middleware\ThrottleRequests
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 180
+                        function: handle
+                        class: Illuminate\Routing\Middleware\ThrottleRequests
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php
+                        line: 25
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 141
+                        function: 'Laravel\Sanctum\Http\Middleware\{closure}'
+                        class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 116
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php
+                        line: 24
+                        function: then
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 180
+                        function: handle
+                        class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 116
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                        line: 797
+                        function: then
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                        line: 776
+                        function: runRouteWithinStack
+                        class: Illuminate\Routing\Router
                         type: '->'
                       -
                         file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php
                         line: 740
-                        function: findRoute
+                        function: runRoute
                         class: Illuminate\Routing\Router
                         type: '->'
                       -
@@ -1316,16 +2136,16 @@ paths:
                       properties:
                         file:
                           type: string
-                          example: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php
+                          example: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Connection.php
                         line:
                           type: integer
-                          example: 162
+                          example: 753
                         function:
                           type: string
-                          example: handleMatchedRoute
+                          example: runQueryCallback
                         class:
                           type: string
-                          example: Illuminate\Routing\AbstractRouteCollection
+                          example: Illuminate\Database\Connection
                         type:
                           type: string
                           example: '->'
@@ -1337,10 +2157,10 @@ paths:
         in: path
         name: id
         description: 'The ID of the user.'
-        example: saepe
+        example: 1
         required: true
         schema:
-          type: string
+          type: integer
   '/api/users/items/{id}':
     post:
       summary: ''
@@ -1360,19 +2180,19 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: ugdeegmjz
+                  example: inoehgtguzytfxnjrkjwqfev
                 description:
                   type: string
                   description: ''
-                  example: 'Consequatur eos voluptates omnis recusandae.'
+                  example: 'Delectus et et nihil quisquam reiciendis laudantium.'
                 quantity:
                   type: integer
                   description: 'Must be at least 1.'
-                  example: 52
+                  example: 32
                 category_id:
                   type: integer
                   description: ''
-                  example: 5
+                  example: 4
                 image:
                   type: string
                   format: binary
@@ -1387,10 +2207,10 @@ paths:
         in: path
         name: id
         description: 'The ID of the item.'
-        example: dolores
+        example: 4
         required: true
         schema:
-          type: string
+          type: integer
   '/api/users/{id}/items/{item_id}':
     put:
       summary: ''
@@ -1415,18 +2235,18 @@ paths:
         in: path
         name: id
         description: 'The ID of the user.'
-        example: quia
+        example: 1
         required: true
         schema:
-          type: string
+          type: integer
       -
         in: path
         name: item_id
         description: 'The ID of the item.'
-        example: eligendi
+        example: 4
         required: true
         schema:
-          type: string
+          type: integer
   /api/user:
     get:
       summary: ''
@@ -1434,34 +2254,94 @@ paths:
       description: ''
       parameters: []
       responses:
-        404:
+        500:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  message: 'The route api/user could not be found.'
-                  exception: Symfony\Component\HttpKernel\Exception\NotFoundHttpException
-                  file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php
-                  line: 44
+                  message: 'Auth guard [api] is not defined.'
+                  exception: InvalidArgumentException
+                  file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Auth/AuthManager.php
+                  line: 86
                   trace:
                     -
-                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php
-                      line: 162
-                      function: handleMatchedRoute
-                      class: Illuminate\Routing\AbstractRouteCollection
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Auth/AuthManager.php
+                      line: 70
+                      function: resolve
+                      class: Illuminate\Auth\AuthManager
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php
+                      line: 76
+                      function: guard
+                      class: Illuminate\Auth\AuthManager
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php
+                      line: 55
+                      function: authenticate
+                      class: Illuminate\Auth\Middleware\Authenticate
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 180
+                      function: handle
+                      class: Illuminate\Auth\Middleware\Authenticate
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php
+                      line: 25
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 141
+                      function: 'Laravel\Sanctum\Http\Middleware\{closure}'
+                      class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 116
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php
+                      line: 24
+                      function: then
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 180
+                      function: handle
+                      class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 116
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
                       type: '->'
                     -
                       file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php
-                      line: 753
-                      function: match
-                      class: Illuminate\Routing\RouteCollection
+                      line: 797
+                      function: then
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                      line: 776
+                      function: runRouteWithinStack
+                      class: Illuminate\Routing\Router
                       type: '->'
                     -
                       file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php
                       line: 740
-                      function: findRoute
+                      function: runRoute
                       class: Illuminate\Routing\Router
                       type: '->'
                     -
@@ -1737,35 +2617,95 @@ paths:
                 properties:
                   message:
                     type: string
-                    example: 'The route api/user could not be found.'
+                    example: 'Auth guard [api] is not defined.'
                   exception:
                     type: string
-                    example: Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+                    example: InvalidArgumentException
                   file:
                     type: string
-                    example: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php
+                    example: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Auth/AuthManager.php
                   line:
                     type: integer
-                    example: 44
+                    example: 86
                   trace:
                     type: array
                     example:
                       -
-                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php
-                        line: 162
-                        function: handleMatchedRoute
-                        class: Illuminate\Routing\AbstractRouteCollection
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Auth/AuthManager.php
+                        line: 70
+                        function: resolve
+                        class: Illuminate\Auth\AuthManager
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php
+                        line: 76
+                        function: guard
+                        class: Illuminate\Auth\AuthManager
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php
+                        line: 55
+                        function: authenticate
+                        class: Illuminate\Auth\Middleware\Authenticate
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 180
+                        function: handle
+                        class: Illuminate\Auth\Middleware\Authenticate
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php
+                        line: 25
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 141
+                        function: 'Laravel\Sanctum\Http\Middleware\{closure}'
+                        class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 116
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php
+                        line: 24
+                        function: then
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 180
+                        function: handle
+                        class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 116
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
                         type: '->'
                       -
                         file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php
-                        line: 753
-                        function: match
-                        class: Illuminate\Routing\RouteCollection
+                        line: 797
+                        function: then
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                        line: 776
+                        function: runRouteWithinStack
+                        class: Illuminate\Routing\Router
                         type: '->'
                       -
                         file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php
                         line: 740
-                        function: findRoute
+                        function: runRoute
                         class: Illuminate\Routing\Router
                         type: '->'
                       -
@@ -2043,16 +2983,16 @@ paths:
                       properties:
                         file:
                           type: string
-                          example: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php
+                          example: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Auth/AuthManager.php
                         line:
                           type: integer
-                          example: 162
+                          example: 70
                         function:
                           type: string
-                          example: handleMatchedRoute
+                          example: resolve
                         class:
                           type: string
-                          example: Illuminate\Routing\AbstractRouteCollection
+                          example: Illuminate\Auth\AuthManager
                         type:
                           type: string
                           example: '->'

@@ -26,27 +26,27 @@ endpoints:
         name: username
         description: ''
         required: true
-        example: expedita
+        example: dolorem
         type: string
         custom: []
       email:
         name: email
         description: ''
         required: true
-        example: ngoodwin@example.net
+        example: halvorson.blanche@example.com
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: O$X9g9h8
+        example: '0*x(EsW\I))aT}K=k}RD'
         type: string
         custom: []
     cleanBodyParameters:
-      username: expedita
-      email: ngoodwin@example.net
-      password: O$X9g9h8
+      username: dolorem
+      email: halvorson.blanche@example.com
+      password: '0*x(EsW\I))aT}K=k}RD'
     fileParameters: []
     responses: []
     responseFields: []
@@ -80,19 +80,19 @@ endpoints:
         name: email
         description: ''
         required: true
-        example: nweber@example.com
+        example: buckridge.daisha@example.net
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: 3gN|3|8G$
+        example: '2}\v8[N!-'
         type: string
         custom: []
     cleanBodyParameters:
-      email: nweber@example.com
-      password: 3gN|3|8G$
+      email: buckridge.daisha@example.net
+      password: '2}\v8[N!-'
     fileParameters: []
     responses: []
     responseFields: []
@@ -126,32 +126,287 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 404
+        status: 500
         content: |-
           {
-              "message": "The route api/users could not be found.",
-              "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
-              "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php",
-              "line": 44,
+              "message": "SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ID396978_swappie.notifications' doesn't exist (Connection: mysql, SQL: select * from `notifications` where `notifications`.`notifiable_type` = App\\Models\\User and `notifications`.`notifiable_id` = 1 and `notifications`.`notifiable_id` is not null order by `created_at` desc)",
+              "exception": "Illuminate\\Database\\QueryException",
+              "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+              "line": 793,
               "trace": [
                   {
-                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php",
-                      "line": 162,
-                      "function": "handleMatchedRoute",
-                      "class": "Illuminate\\Routing\\AbstractRouteCollection",
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+                      "line": 753,
+                      "function": "runQueryCallback",
+                      "class": "Illuminate\\Database\\Connection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+                      "line": 405,
+                      "function": "run",
+                      "class": "Illuminate\\Database\\Connection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
+                      "line": 2718,
+                      "function": "select",
+                      "class": "Illuminate\\Database\\Connection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
+                      "line": 2707,
+                      "function": "runSelect",
+                      "class": "Illuminate\\Database\\Query\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
+                      "line": 3248,
+                      "function": "Illuminate\\Database\\Query\\{closure}",
+                      "class": "Illuminate\\Database\\Query\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
+                      "line": 2706,
+                      "function": "onceWithColumns",
+                      "class": "Illuminate\\Database\\Query\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php",
+                      "line": 717,
+                      "function": "get",
+                      "class": "Illuminate\\Database\\Query\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php",
+                      "line": 701,
+                      "function": "getModels",
+                      "class": "Illuminate\\Database\\Eloquent\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/MorphMany.php",
+                      "line": 33,
+                      "function": "get",
+                      "class": "Illuminate\\Database\\Eloquent\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php",
+                      "line": 590,
+                      "function": "getResults",
+                      "class": "Illuminate\\Database\\Eloquent\\Relations\\MorphMany",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php",
+                      "line": 528,
+                      "function": "getRelationshipFromMethod",
+                      "class": "Illuminate\\Database\\Eloquent\\Model",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php",
+                      "line": 453,
+                      "function": "getRelationValue",
+                      "class": "Illuminate\\Database\\Eloquent\\Model",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
+                      "line": 2227,
+                      "function": "getAttribute",
+                      "class": "Illuminate\\Database\\Eloquent\\Model",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/app/Http/Controllers/AuthController.php",
+                      "line": 83,
+                      "function": "__get",
+                      "class": "Illuminate\\Database\\Eloquent\\Model",
+                      "type": "->"
+                  },
+                  {
+                      "function": "App\\Http\\Controllers\\{closure}",
+                      "class": "App\\Http\\Controllers\\AuthController",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Collections/Arr.php",
+                      "line": 558,
+                      "function": "array_map"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Collections/Collection.php",
+                      "line": 771,
+                      "function": "map",
+                      "class": "Illuminate\\Support\\Arr",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Collection.php",
+                      "line": 344,
+                      "function": "map",
+                      "class": "Illuminate\\Support\\Collection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/app/Http/Controllers/AuthController.php",
+                      "line": 75,
+                      "function": "map",
+                      "class": "Illuminate\\Database\\Eloquent\\Collection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Controller.php",
+                      "line": 54,
+                      "function": "index",
+                      "class": "App\\Http\\Controllers\\AuthController",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php",
+                      "line": 43,
+                      "function": "callAction",
+                      "class": "Illuminate\\Routing\\Controller",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
+                      "line": 259,
+                      "function": "dispatch",
+                      "class": "Illuminate\\Routing\\ControllerDispatcher",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
+                      "line": 205,
+                      "function": "runController",
+                      "class": "Illuminate\\Routing\\Route",
                       "type": "->"
                   },
                   {
                       "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 753,
-                      "function": "match",
-                      "class": "Illuminate\\Routing\\RouteCollection",
+                      "line": 798,
+                      "function": "run",
+                      "class": "Illuminate\\Routing\\Route",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 141,
+                      "function": "Illuminate\\Routing\\{closure}",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php",
+                      "line": 50,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 180,
+                      "function": "handle",
+                      "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+                      "line": 152,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+                      "line": 118,
+                      "function": "handleRequest",
+                      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+                      "line": 80,
+                      "function": "handleRequestUsingNamedLimiter",
+                      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 180,
+                      "function": "handle",
+                      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php",
+                      "line": 25,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 141,
+                      "function": "Laravel\\Sanctum\\Http\\Middleware\\{closure}",
+                      "class": "Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 116,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php",
+                      "line": 24,
+                      "function": "then",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 180,
+                      "function": "handle",
+                      "class": "Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 116,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 797,
+                      "function": "then",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 776,
+                      "function": "runRouteWithinStack",
+                      "class": "Illuminate\\Routing\\Router",
                       "type": "->"
                   },
                   {
                       "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
                       "line": 740,
-                      "function": "findRoute",
+                      "function": "runRoute",
                       "class": "Illuminate\\Routing\\Router",
                       "type": "->"
                   },
@@ -475,6 +730,8 @@ endpoints:
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '59'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -505,11 +762,11 @@ endpoints:
         name: id
         description: 'The ID of the user.'
         required: true
-        example: saepe
-        type: string
+        example: 1
+        type: integer
         custom: []
     cleanUrlParameters:
-      id: saepe
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -517,32 +774,256 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 404
+        status: 500
         content: |-
           {
-              "message": "The route api/users/saepe could not be found.",
-              "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
-              "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php",
-              "line": 44,
+              "message": "SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ID396978_swappie.notifications' doesn't exist (Connection: mysql, SQL: select * from `notifications` where `notifications`.`notifiable_type` = App\\Models\\User and `notifications`.`notifiable_id` = 1 and `notifications`.`notifiable_id` is not null order by `created_at` desc)",
+              "exception": "Illuminate\\Database\\QueryException",
+              "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+              "line": 793,
               "trace": [
                   {
-                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php",
-                      "line": 162,
-                      "function": "handleMatchedRoute",
-                      "class": "Illuminate\\Routing\\AbstractRouteCollection",
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+                      "line": 753,
+                      "function": "runQueryCallback",
+                      "class": "Illuminate\\Database\\Connection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+                      "line": 405,
+                      "function": "run",
+                      "class": "Illuminate\\Database\\Connection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
+                      "line": 2718,
+                      "function": "select",
+                      "class": "Illuminate\\Database\\Connection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
+                      "line": 2707,
+                      "function": "runSelect",
+                      "class": "Illuminate\\Database\\Query\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
+                      "line": 3248,
+                      "function": "Illuminate\\Database\\Query\\{closure}",
+                      "class": "Illuminate\\Database\\Query\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
+                      "line": 2706,
+                      "function": "onceWithColumns",
+                      "class": "Illuminate\\Database\\Query\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php",
+                      "line": 717,
+                      "function": "get",
+                      "class": "Illuminate\\Database\\Query\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php",
+                      "line": 701,
+                      "function": "getModels",
+                      "class": "Illuminate\\Database\\Eloquent\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/MorphMany.php",
+                      "line": 33,
+                      "function": "get",
+                      "class": "Illuminate\\Database\\Eloquent\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php",
+                      "line": 590,
+                      "function": "getResults",
+                      "class": "Illuminate\\Database\\Eloquent\\Relations\\MorphMany",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php",
+                      "line": 528,
+                      "function": "getRelationshipFromMethod",
+                      "class": "Illuminate\\Database\\Eloquent\\Model",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php",
+                      "line": 453,
+                      "function": "getRelationValue",
+                      "class": "Illuminate\\Database\\Eloquent\\Model",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
+                      "line": 2227,
+                      "function": "getAttribute",
+                      "class": "Illuminate\\Database\\Eloquent\\Model",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/app/Http/Controllers/AuthController.php",
+                      "line": 106,
+                      "function": "__get",
+                      "class": "Illuminate\\Database\\Eloquent\\Model",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Controller.php",
+                      "line": 54,
+                      "function": "show",
+                      "class": "App\\Http\\Controllers\\AuthController",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php",
+                      "line": 43,
+                      "function": "callAction",
+                      "class": "Illuminate\\Routing\\Controller",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
+                      "line": 259,
+                      "function": "dispatch",
+                      "class": "Illuminate\\Routing\\ControllerDispatcher",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
+                      "line": 205,
+                      "function": "runController",
+                      "class": "Illuminate\\Routing\\Route",
                       "type": "->"
                   },
                   {
                       "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 753,
-                      "function": "match",
-                      "class": "Illuminate\\Routing\\RouteCollection",
+                      "line": 798,
+                      "function": "run",
+                      "class": "Illuminate\\Routing\\Route",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 141,
+                      "function": "Illuminate\\Routing\\{closure}",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php",
+                      "line": 50,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 180,
+                      "function": "handle",
+                      "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+                      "line": 152,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+                      "line": 118,
+                      "function": "handleRequest",
+                      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+                      "line": 80,
+                      "function": "handleRequestUsingNamedLimiter",
+                      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 180,
+                      "function": "handle",
+                      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php",
+                      "line": 25,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 141,
+                      "function": "Laravel\\Sanctum\\Http\\Middleware\\{closure}",
+                      "class": "Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 116,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php",
+                      "line": 24,
+                      "function": "then",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 180,
+                      "function": "handle",
+                      "class": "Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 116,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 797,
+                      "function": "then",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 776,
+                      "function": "runRouteWithinStack",
+                      "class": "Illuminate\\Routing\\Router",
                       "type": "->"
                   },
                   {
                       "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
                       "line": 740,
-                      "function": "findRoute",
+                      "function": "runRoute",
                       "class": "Illuminate\\Routing\\Router",
                       "type": "->"
                   },
@@ -866,6 +1347,8 @@ endpoints:
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '58'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -896,11 +1379,11 @@ endpoints:
         name: id
         description: 'The ID of the item.'
         required: true
-        example: dolores
-        type: string
+        example: 4
+        type: integer
         custom: []
     cleanUrlParameters:
-      id: dolores
+      id: 4
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -908,28 +1391,28 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: ugdeegmjz
+        example: inoehgtguzytfxnjrkjwqfev
         type: string
         custom: []
       description:
         name: description
         description: ''
         required: false
-        example: 'Consequatur eos voluptates omnis recusandae.'
+        example: 'Delectus et et nihil quisquam reiciendis laudantium.'
         type: string
         custom: []
       quantity:
         name: quantity
         description: 'Must be at least 1.'
         required: true
-        example: 52
+        example: 32
         type: integer
         custom: []
       category_id:
         name: category_id
         description: ''
         required: true
-        example: 5
+        example: 4
         type: integer
         custom: []
       image:
@@ -940,10 +1423,10 @@ endpoints:
         type: file
         custom: []
     cleanBodyParameters:
-      name: ugdeegmjz
-      description: 'Consequatur eos voluptates omnis recusandae.'
-      quantity: 52
-      category_id: 5
+      name: inoehgtguzytfxnjrkjwqfev
+      description: 'Delectus et et nihil quisquam reiciendis laudantium.'
+      quantity: 32
+      category_id: 4
     fileParameters:
       image: null
     responses: []
@@ -974,19 +1457,19 @@ endpoints:
         name: id
         description: 'The ID of the user.'
         required: true
-        example: quia
-        type: string
+        example: 1
+        type: integer
         custom: []
       item_id:
         name: item_id
         description: 'The ID of the item.'
         required: true
-        example: eligendi
-        type: string
+        example: 4
+        type: integer
         custom: []
     cleanUrlParameters:
-      id: quia
-      item_id: eligendi
+      id: 1
+      item_id: 4
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1020,19 +1503,19 @@ endpoints:
         name: id
         description: 'The ID of the user.'
         required: true
-        example: fugit
-        type: string
+        example: 1
+        type: integer
         custom: []
       item_id:
         name: item_id
         description: 'The ID of the item.'
         required: true
-        example: non
-        type: string
+        example: 4
+        type: integer
         custom: []
     cleanUrlParameters:
-      id: fugit
-      item_id: non
+      id: 1
+      item_id: 4
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1070,32 +1553,102 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 404
+        status: 500
         content: |-
           {
-              "message": "The route api/user could not be found.",
-              "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
-              "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php",
-              "line": 44,
+              "message": "Auth guard [api] is not defined.",
+              "exception": "InvalidArgumentException",
+              "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Auth/AuthManager.php",
+              "line": 86,
               "trace": [
                   {
-                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php",
-                      "line": 162,
-                      "function": "handleMatchedRoute",
-                      "class": "Illuminate\\Routing\\AbstractRouteCollection",
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Auth/AuthManager.php",
+                      "line": 70,
+                      "function": "resolve",
+                      "class": "Illuminate\\Auth\\AuthManager",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php",
+                      "line": 76,
+                      "function": "guard",
+                      "class": "Illuminate\\Auth\\AuthManager",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php",
+                      "line": 55,
+                      "function": "authenticate",
+                      "class": "Illuminate\\Auth\\Middleware\\Authenticate",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 180,
+                      "function": "handle",
+                      "class": "Illuminate\\Auth\\Middleware\\Authenticate",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php",
+                      "line": 25,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 141,
+                      "function": "Laravel\\Sanctum\\Http\\Middleware\\{closure}",
+                      "class": "Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 116,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php",
+                      "line": 24,
+                      "function": "then",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 180,
+                      "function": "handle",
+                      "class": "Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 116,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
                       "type": "->"
                   },
                   {
                       "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 753,
-                      "function": "match",
-                      "class": "Illuminate\\Routing\\RouteCollection",
+                      "line": 797,
+                      "function": "then",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 776,
+                      "function": "runRouteWithinStack",
+                      "class": "Illuminate\\Routing\\Router",
                       "type": "->"
                   },
                   {
                       "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
                       "line": 740,
-                      "function": "findRoute",
+                      "function": "runRoute",
                       "class": "Illuminate\\Routing\\Router",
                       "type": "->"
                   },
