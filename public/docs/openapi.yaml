@@ -5,7 +5,7 @@ info:
   version: 1.0.0
 servers:
   -
-    url: 'https://s10.syntradeveloper.be'
+    url: 'https://orca-app-ik7qo.ondigitalocean.app'
 paths:
   /api/register:
     post:
@@ -26,15 +26,15 @@ paths:
                 username:
                   type: string
                   description: ''
-                  example: voluptas
+                  example: expedita
                 email:
                   type: string
                   description: ''
-                  example: fglover@example.com
+                  example: ngoodwin@example.net
                 password:
                   type: string
                   description: ''
-                  example: '>+5ex?%pJ5'
+                  example: O$X9g9h8
               required:
                 - username
                 - email
@@ -59,11 +59,11 @@ paths:
                 email:
                   type: string
                   description: ''
-                  example: vinnie94@example.org
+                  example: nweber@example.com
                 password:
                   type: string
                   description: ''
-                  example: 'I)+o~z;v#jibxpev'
+                  example: 3gN|3|8G$
               required:
                 - email
                 - password
@@ -714,7 +714,7 @@ paths:
               schema:
                 type: object
                 example:
-                  message: 'The route api/users/tempore could not be found.'
+                  message: 'The route api/users/saepe could not be found.'
                   exception: Symfony\Component\HttpKernel\Exception\NotFoundHttpException
                   file: /Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php
                   line: 44
@@ -1010,7 +1010,7 @@ paths:
                 properties:
                   message:
                     type: string
-                    example: 'The route api/users/tempore could not be found.'
+                    example: 'The route api/users/saepe could not be found.'
                   exception:
                     type: string
                     example: Symfony\Component\HttpKernel\Exception\NotFoundHttpException
@@ -1337,7 +1337,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the user.'
-        example: tempore
+        example: saepe
         required: true
         schema:
           type: string
@@ -1360,19 +1360,19 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: nlcjbbevxjgru
+                  example: ugdeegmjz
                 description:
                   type: string
                   description: ''
-                  example: 'Vel aut unde molestiae ipsa non quam ut.'
+                  example: 'Consequatur eos voluptates omnis recusandae.'
                 quantity:
                   type: integer
                   description: 'Must be at least 1.'
-                  example: 5
+                  example: 52
                 category_id:
                   type: integer
                   description: ''
-                  example: 8
+                  example: 5
                 image:
                   type: string
                   format: binary
@@ -1387,7 +1387,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the item.'
-        example: porro
+        example: dolores
         required: true
         schema:
           type: string
@@ -1415,7 +1415,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the user.'
-        example: id
+        example: quia
         required: true
         schema:
           type: string
@@ -1423,7 +1423,7 @@ paths:
         in: path
         name: item_id
         description: 'The ID of the item.'
-        example: esse
+        example: eligendi
         required: true
         schema:
           type: string

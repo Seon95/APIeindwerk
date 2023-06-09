@@ -3,7 +3,7 @@
 
 
 <aside>
-    <strong>Base URL</strong>: <code>https://s10.syntradeveloper.be/</code>
+    <strong>Base URL</strong>: <code>https://orca-app-ik7qo.ondigitalocean.app/</code>
 </aside>
 
 This documentation aims to provide all the information you need to work with our API.

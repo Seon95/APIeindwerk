@@ -28,27 +28,27 @@ endpoints:
         name: username
         description: ''
         required: true
-        example: voluptas
+        example: expedita
         type: string
         custom: []
       email:
         name: email
         description: ''
         required: true
-        example: fglover@example.com
+        example: ngoodwin@example.net
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: '>+5ex?%pJ5'
+        example: O$X9g9h8
         type: string
         custom: []
     cleanBodyParameters:
-      username: voluptas
-      email: fglover@example.com
-      password: '>+5ex?%pJ5'
+      username: expedita
+      email: ngoodwin@example.net
+      password: O$X9g9h8
     fileParameters: []
     responses: []
     responseFields: []
@@ -82,19 +82,19 @@ endpoints:
         name: email
         description: ''
         required: true
-        example: vinnie94@example.org
+        example: nweber@example.com
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: 'I)+o~z;v#jibxpev'
+        example: 3gN|3|8G$
         type: string
         custom: []
     cleanBodyParameters:
-      email: vinnie94@example.org
-      password: 'I)+o~z;v#jibxpev'
+      email: nweber@example.com
+      password: 3gN|3|8G$
     fileParameters: []
     responses: []
     responseFields: []
@@ -507,11 +507,11 @@ endpoints:
         name: id
         description: 'The ID of the user.'
         required: true
-        example: tempore
+        example: saepe
         type: string
         custom: []
     cleanUrlParameters:
-      id: tempore
+      id: saepe
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -522,7 +522,7 @@ endpoints:
         status: 404
         content: |-
           {
-              "message": "The route api/users/tempore could not be found.",
+              "message": "The route api/users/saepe could not be found.",
               "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
               "file": "/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php",
               "line": 44,
@@ -898,11 +898,11 @@ endpoints:
         name: id
         description: 'The ID of the item.'
         required: true
-        example: porro
+        example: dolores
         type: string
         custom: []
     cleanUrlParameters:
-      id: porro
+      id: dolores
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -910,28 +910,28 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: nlcjbbevxjgru
+        example: ugdeegmjz
         type: string
         custom: []
       description:
         name: description
         description: ''
         required: false
-        example: 'Vel aut unde molestiae ipsa non quam ut.'
+        example: 'Consequatur eos voluptates omnis recusandae.'
         type: string
         custom: []
       quantity:
         name: quantity
         description: 'Must be at least 1.'
         required: true
-        example: 5
+        example: 52
         type: integer
         custom: []
       category_id:
         name: category_id
         description: ''
         required: true
-        example: 8
+        example: 5
         type: integer
         custom: []
       image:
@@ -942,10 +942,10 @@ endpoints:
         type: file
         custom: []
     cleanBodyParameters:
-      name: nlcjbbevxjgru
-      description: 'Vel aut unde molestiae ipsa non quam ut.'
-      quantity: 5
-      category_id: 8
+      name: ugdeegmjz
+      description: 'Consequatur eos voluptates omnis recusandae.'
+      quantity: 52
+      category_id: 5
     fileParameters:
       image: null
     responses: []
@@ -976,19 +976,19 @@ endpoints:
         name: id
         description: 'The ID of the user.'
         required: true
-        example: id
+        example: quia
         type: string
         custom: []
       item_id:
         name: item_id
         description: 'The ID of the item.'
         required: true
-        example: esse
+        example: eligendi
         type: string
         custom: []
     cleanUrlParameters:
-      id: id
-      item_id: esse
+      id: quia
+      item_id: eligendi
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1022,19 +1022,19 @@ endpoints:
         name: id
         description: 'The ID of the user.'
         required: true
-        example: odio
+        example: fugit
         type: string
         custom: []
       item_id:
         name: item_id
         description: 'The ID of the item.'
         required: true
-        example: perspiciatis
+        example: non
         type: string
         custom: []
     cleanUrlParameters:
-      id: odio
-      item_id: perspiciatis
+      id: fugit
+      item_id: non
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

@@ -26,7 +26,7 @@
             </style>
 
     <script>
-        var tryItOutBaseUrl = "https://s10.syntradeveloper.be/";
+        var tryItOutBaseUrl = "https://orca-app-ik7qo.ondigitalocean.app/";
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
@@ -115,7 +115,7 @@
     <div class="content">
         <h1 id="introduction">Introduction</h1>
 <aside>
-    <strong>Base URL</strong>: <code>https://s10.syntradeveloper.be/</code>
+    <strong>Base URL</strong>: <code>https://orca-app-ik7qo.ondigitalocean.app/</code>
 </aside>
 <p>This documentation aims to provide all the information you need to work with our API.</p>
 <aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
@@ -141,20 +141,20 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://s10.syntradeveloper.be/api/register" \
+    "https://orca-app-ik7qo.ondigitalocean.app/api/register" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"username\": \"voluptas\",
-    \"email\": \"fglover@example.com\",
-    \"password\": \"&gt;+5ex?%pJ5\"
+    \"username\": \"expedita\",
+    \"email\": \"ngoodwin@example.net\",
+    \"password\": \"O$X9g9h8\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://s10.syntradeveloper.be/api/register"
+    "https://orca-app-ik7qo.ondigitalocean.app/api/register"
 );
 
 const headers = {
@@ -163,9 +163,9 @@ const headers = {
 };
 
 let body = {
-    "username": "voluptas",
-    "email": "fglover@example.com",
-    "password": "&gt;+5ex?%pJ5"
+    "username": "expedita",
+    "email": "ngoodwin@example.net",
+    "password": "O$X9g9h8"
 };
 
 fetch(url, {
@@ -254,10 +254,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="username"                data-endpoint="POSTapi-register"
-               value="voluptas"
+               value="expedita"
                data-component="body">
     <br>
-<p>Example: <code>voluptas</code></p>
+<p>Example: <code>expedita</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -265,10 +265,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="email"                data-endpoint="POSTapi-register"
-               value="fglover@example.com"
+               value="ngoodwin@example.net"
                data-component="body">
     <br>
-<p>Example: <code>fglover@example.com</code></p>
+<p>Example: <code>ngoodwin@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -276,10 +276,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="password"                data-endpoint="POSTapi-register"
-               value=">+5ex?%pJ5"
+               value="O$X9g9h8"
                data-component="body">
     <br>
-<p>Example: <code>&gt;+5ex?%pJ5</code></p>
+<p>Example: <code>O$X9g9h8</code></p>
         </div>
         </form>
 
@@ -296,19 +296,19 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://s10.syntradeveloper.be/api/login" \
+    "https://orca-app-ik7qo.ondigitalocean.app/api/login" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"vinnie94@example.org\",
-    \"password\": \"I)+o~z;v#jibxpev\"
+    \"email\": \"nweber@example.com\",
+    \"password\": \"3gN|3|8G$\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://s10.syntradeveloper.be/api/login"
+    "https://orca-app-ik7qo.ondigitalocean.app/api/login"
 );
 
 const headers = {
@@ -317,8 +317,8 @@ const headers = {
 };
 
 let body = {
-    "email": "vinnie94@example.org",
-    "password": "I)+o~z;v#jibxpev"
+    "email": "nweber@example.com",
+    "password": "3gN|3|8G$"
 };
 
 fetch(url, {
@@ -407,10 +407,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="email"                data-endpoint="POSTapi-login"
-               value="vinnie94@example.org"
+               value="nweber@example.com"
                data-component="body">
     <br>
-<p>Example: <code>vinnie94@example.org</code></p>
+<p>Example: <code>nweber@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -418,10 +418,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="password"                data-endpoint="POSTapi-login"
-               value="I)+o~z;v#jibxpev"
+               value="3gN|3|8G$"
                data-component="body">
     <br>
-<p>Example: <code>I)+o~z;v#jibxpev</code></p>
+<p>Example: <code>3gN|3|8G$</code></p>
         </div>
         </form>
 
@@ -438,14 +438,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://s10.syntradeveloper.be/api/users" \
+    --get "https://orca-app-ik7qo.ondigitalocean.app/api/users" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://s10.syntradeveloper.be/api/users"
+    "https://orca-app-ik7qo.ondigitalocean.app/api/users"
 );
 
 const headers = {
@@ -903,14 +903,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://s10.syntradeveloper.be/api/users/tempore" \
+    --get "https://orca-app-ik7qo.ondigitalocean.app/api/users/saepe" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://s10.syntradeveloper.be/api/users/tempore"
+    "https://orca-app-ik7qo.ondigitalocean.app/api/users/saepe"
 );
 
 const headers = {
@@ -939,7 +939,7 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;The route api/users/tempore could not be found.&quot;,
+    &quot;message&quot;: &quot;The route api/users/saepe could not be found.&quot;,
     &quot;exception&quot;: &quot;Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException&quot;,
     &quot;file&quot;: &quot;/Users/marouanajtirah/Desktop/APISwappie/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php&quot;,
     &quot;line&quot;: 44,
@@ -1360,10 +1360,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="id"                data-endpoint="GETapi-users--id-"
-               value="tempore"
+               value="saepe"
                data-component="url">
     <br>
-<p>The ID of the user. Example: <code>tempore</code></p>
+<p>The ID of the user. Example: <code>saepe</code></p>
             </div>
                     </form>
 
@@ -1380,19 +1380,19 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://s10.syntradeveloper.be/api/users/items/porro" \
+    "https://orca-app-ik7qo.ondigitalocean.app/api/users/items/dolores" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "name=nlcjbbevxjgru" \
-    --form "description=Vel aut unde molestiae ipsa non quam ut." \
-    --form "quantity=5" \
-    --form "category_id=8" \
-    --form "image=@/private/var/folders/_9/htz1t9s95kzg8zwhbdrq9_fw0000gn/T/phpBMJAkb" </code></pre></div>
+    --form "name=ugdeegmjz" \
+    --form "description=Consequatur eos voluptates omnis recusandae." \
+    --form "quantity=52" \
+    --form "category_id=5" \
+    --form "image=@/private/var/folders/_9/htz1t9s95kzg8zwhbdrq9_fw0000gn/T/phplmNu5n" </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://s10.syntradeveloper.be/api/users/items/porro"
+    "https://orca-app-ik7qo.ondigitalocean.app/api/users/items/dolores"
 );
 
 const headers = {
@@ -1401,10 +1401,10 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('name', 'nlcjbbevxjgru');
-body.append('description', 'Vel aut unde molestiae ipsa non quam ut.');
-body.append('quantity', '5');
-body.append('category_id', '8');
+body.append('name', 'ugdeegmjz');
+body.append('description', 'Consequatur eos voluptates omnis recusandae.');
+body.append('quantity', '52');
+body.append('category_id', '5');
 body.append('image', document.querySelector('input[name="image"]').files[0]);
 
 fetch(url, {
@@ -1493,10 +1493,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="id"                data-endpoint="POSTapi-users-items--id-"
-               value="porro"
+               value="dolores"
                data-component="url">
     <br>
-<p>The ID of the item. Example: <code>porro</code></p>
+<p>The ID of the item. Example: <code>dolores</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -1505,10 +1505,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="POSTapi-users-items--id-"
-               value="nlcjbbevxjgru"
+               value="ugdeegmjz"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>nlcjbbevxjgru</code></p>
+<p>Must not be greater than 255 characters. Example: <code>ugdeegmjz</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1516,10 +1516,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="description"                data-endpoint="POSTapi-users-items--id-"
-               value="Vel aut unde molestiae ipsa non quam ut."
+               value="Consequatur eos voluptates omnis recusandae."
                data-component="body">
     <br>
-<p>Example: <code>Vel aut unde molestiae ipsa non quam ut.</code></p>
+<p>Example: <code>Consequatur eos voluptates omnis recusandae.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>quantity</code></b>&nbsp;&nbsp;
@@ -1527,10 +1527,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                name="quantity"                data-endpoint="POSTapi-users-items--id-"
-               value="5"
+               value="52"
                data-component="body">
     <br>
-<p>Must be at least 1. Example: <code>5</code></p>
+<p>Must be at least 1. Example: <code>52</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>category_id</code></b>&nbsp;&nbsp;
@@ -1538,10 +1538,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                name="category_id"                data-endpoint="POSTapi-users-items--id-"
-               value="8"
+               value="5"
                data-component="body">
     <br>
-<p>Example: <code>8</code></p>
+<p>Example: <code>5</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>image</code></b>&nbsp;&nbsp;
@@ -1552,7 +1552,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be an image. Must not be greater than 2048 kilobytes. Example: <code>/private/var/folders/_9/htz1t9s95kzg8zwhbdrq9_fw0000gn/T/phpBMJAkb</code></p>
+<p>Must be an image. Must not be greater than 2048 kilobytes. Example: <code>/private/var/folders/_9/htz1t9s95kzg8zwhbdrq9_fw0000gn/T/phplmNu5n</code></p>
         </div>
         </form>
 
@@ -1569,14 +1569,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://s10.syntradeveloper.be/api/users/id/items/esse" \
+    "https://orca-app-ik7qo.ondigitalocean.app/api/users/quia/items/eligendi" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://s10.syntradeveloper.be/api/users/id/items/esse"
+    "https://orca-app-ik7qo.ondigitalocean.app/api/users/quia/items/eligendi"
 );
 
 const headers = {
@@ -1669,10 +1669,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="id"                data-endpoint="PUTapi-users--id--items--item_id-"
-               value="id"
+               value="quia"
                data-component="url">
     <br>
-<p>The ID of the user. Example: <code>id</code></p>
+<p>The ID of the user. Example: <code>quia</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>item_id</code></b>&nbsp;&nbsp;
@@ -1680,10 +1680,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="item_id"                data-endpoint="PUTapi-users--id--items--item_id-"
-               value="esse"
+               value="eligendi"
                data-component="url">
     <br>
-<p>The ID of the item. Example: <code>esse</code></p>
+<p>The ID of the item. Example: <code>eligendi</code></p>
             </div>
                     </form>
 
@@ -1700,14 +1700,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://s10.syntradeveloper.be/api/users/odio/items/perspiciatis" \
+    "https://orca-app-ik7qo.ondigitalocean.app/api/users/fugit/items/non" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://s10.syntradeveloper.be/api/users/odio/items/perspiciatis"
+    "https://orca-app-ik7qo.ondigitalocean.app/api/users/fugit/items/non"
 );
 
 const headers = {
@@ -1800,10 +1800,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="id"                data-endpoint="DELETEapi-users--id--items--item_id-"
-               value="odio"
+               value="fugit"
                data-component="url">
     <br>
-<p>The ID of the user. Example: <code>odio</code></p>
+<p>The ID of the user. Example: <code>fugit</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>item_id</code></b>&nbsp;&nbsp;
@@ -1811,10 +1811,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="item_id"                data-endpoint="DELETEapi-users--id--items--item_id-"
-               value="perspiciatis"
+               value="non"
                data-component="url">
     <br>
-<p>The ID of the item. Example: <code>perspiciatis</code></p>
+<p>The ID of the item. Example: <code>non</code></p>
             </div>
                     </form>
 
@@ -1831,14 +1831,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://s10.syntradeveloper.be/api/user" \
+    --get "https://orca-app-ik7qo.ondigitalocean.app/api/user" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://s10.syntradeveloper.be/api/user"
+    "https://orca-app-ik7qo.ondigitalocean.app/api/user"
 );
 
 const headers = {
