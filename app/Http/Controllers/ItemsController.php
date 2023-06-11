@@ -137,13 +137,17 @@ class ItemsController extends Controller
     }
 
 
-    public function getUserByItemId(Request $request, string $itemId)
+    public function getUserByItemId(string $itemId)
     {
-        $item = Item::findOrFail($itemId);
-        $user = $item->user()->first(); // Retrieve the user associated with the item
+        $user = User::whereHas('items', function ($query) use ($itemId) {
+            $query->where('id', $itemId);
+        })->first();
+
+        if (!$user) {
+            return response()->json(['message' => 'User not found'], 404);
+        }
 
         return response()->json([
-            'item' => $item,
             'user' => $user,
         ]);
     }
