@@ -112,6 +112,13 @@ class ItemsController extends Controller
 
         $item = $user->items()->create($itemData);
 
+        // Retrieve the existing items of the user
+        $items = $user->items()->get()->toArray();
+
+        // Update the items field of the user with the updated array
+        $user->items = json_encode($items);
+        $user->save();
+
         return response()->json([
             'message' => 'New item added successfully',
             'item' => [
@@ -124,6 +131,7 @@ class ItemsController extends Controller
             ],
         ]);
     }
+
 
 
     public function getUserByItemId(string $itemId)
