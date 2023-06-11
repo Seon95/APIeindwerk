@@ -140,7 +140,7 @@ class ItemsController extends Controller
     public function getUserByItemId(Request $request, string $itemId)
     {
         $item = Item::findOrFail($itemId);
-        $user = $item->user;
+        $user = $item->user()->first(); // Retrieve the user associated with the item
 
         return response()->json([
             'item' => $item,
