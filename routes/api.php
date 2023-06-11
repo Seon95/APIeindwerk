@@ -20,6 +20,8 @@ Route::get('/users/search/{name}', [AuthController::class, 'search']);
 
 Route::post('/users/items/{id}', [ItemsController::class, 'item_post']);
 
+Route::get('/items/{itemId}/user', [ItemsController::class, 'getUserByItemId']);
+
 // protected routes
 
 Route::group(['middleware' => ['auth:sanctum']], function () {

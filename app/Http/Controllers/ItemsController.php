@@ -6,6 +6,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Item;
+
 
 class ItemsController extends Controller
 {
@@ -131,6 +133,18 @@ class ItemsController extends Controller
                 'category_id' => $item->category_id,
                 'image' => $item->image,
             ],
+        ]);
+    }
+
+
+    public function getUserByItemId(Request $request, string $itemId)
+    {
+        $item = Item::findOrFail($itemId);
+        $user = $item->user;
+
+        return response()->json([
+            'item' => $item,
+            'user' => $user,
         ]);
     }
 }
