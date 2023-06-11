@@ -73,7 +73,6 @@ class ItemsController extends Controller
         $user->save();
         return response()->json(['message' => 'Item deleted successfully'], 200);
     }
-
     public function item_post(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
@@ -112,16 +111,6 @@ class ItemsController extends Controller
         }
 
         $item = $user->items()->create($itemData);
-
-        // Retrieve the existing items of the user
-        $items = $user->items()->get()->toArray();
-
-        // Append the new item to the items array
-        $items[] = $item;
-
-        // Update the items field of the user with the updated array
-        $user->items = json_encode($items);
-        $user->save();
 
         return response()->json([
             'message' => 'New item added successfully',
