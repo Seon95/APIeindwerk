@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->json('items')->nullable();
-            $table->json('notifications')->nullable(); // Add notifications field
+            $table->json('notifications')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
@@ -41,6 +41,18 @@ return new class extends Migration
             $table->json('images')->nullable();
             $table->timestamps();
         });
+
+        Schema::create('swap_requests', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('sender_id');
+            $table->unsignedBigInteger('receiver_id');
+            $table->unsignedBigInteger('item_id');
+            $table->timestamps();
+
+            $table->foreign('sender_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('receiver_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
+        });
     }
 
     /**
@@ -48,7 +60,9 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::dropIfExists('swap_requests');
         Schema::dropIfExists('items');
         Schema::dropIfExists('users');
+        Schema::dropIfExists('categories');
     }
 };
