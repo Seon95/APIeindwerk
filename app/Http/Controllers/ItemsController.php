@@ -148,4 +148,14 @@ class ItemsController extends Controller
             'user' => $user,
         ]);
     }
+
+
+    public function getItemById(string $itemId)
+    {
+        $item = Item::findOrFail($itemId);
+
+        return response()->json([
+            'item' => $item,
+        ]);
+    }
 }

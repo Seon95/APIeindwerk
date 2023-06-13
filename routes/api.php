@@ -29,6 +29,7 @@ Route::post('/swap-requests', [SwapRequestController::class, 'store']);
 Route::get('/users/{userId}/swap-requests', [SwapRequestController::class, 'receivedSwapRequests']);
 
 
+Route::get('/items/{itemId}', [ItemsController::class, 'getItemById']);
 
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
