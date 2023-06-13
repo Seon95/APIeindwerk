@@ -26,7 +26,7 @@ Route::get('/items/{itemId}/user', [ItemsController::class, 'getUserByItemId']);
 // protected routes
 
 Route::post('/swap-requests', [SwapRequestController::class, 'store']);
-Route::get('/users/{userId}/swap-requests', [SwapRequestController::class, 'index']);
+Route::get('/users/{userId}/swap-requests', [SwapRequestController::class, 'receivedSwapRequests']);
 
 
 
