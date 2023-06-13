@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ItemsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SwapRequestController;
 
 // public routes
 
@@ -23,6 +24,9 @@ Route::post('/users/items/{id}', [ItemsController::class, 'item_post']);
 Route::get('/items/{itemId}/user', [ItemsController::class, 'getUserByItemId']);
 
 // protected routes
+
+Route::post('/swap-requests', [SwapRequestController::class, 'store']);
+
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
     // items routes
