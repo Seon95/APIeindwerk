@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\SwapRequest;
 use Illuminate\Http\Request;
+use App\Models\User;
+
 
 class SwapRequestController extends Controller
 {
@@ -24,5 +26,13 @@ class SwapRequestController extends Controller
 
         // Return a response indicating success
         return response()->json(['message' => 'Swap request sent successfully'], 200);
+    }
+
+    public function index($userId)
+    {
+        $user = User::findOrFail($userId);
+        $swapRequests = $user->swapRequests;
+
+        return response()->json($swapRequests, 200);
     }
 }
