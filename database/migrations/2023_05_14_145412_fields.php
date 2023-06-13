@@ -47,11 +47,13 @@ return new class extends Migration
             $table->unsignedBigInteger('sender_id');
             $table->unsignedBigInteger('receiver_id');
             $table->unsignedBigInteger('item_id');
+            $table->unsignedBigInteger('my_item_id'); // Add my_item_id field
             $table->timestamps();
 
             $table->foreign('sender_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('receiver_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
+            $table->foreign('my_item_id')->references('id')->on('items')->onDelete('cascade'); // Add foreign key constraint
         });
     }
 

@@ -6,11 +6,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\SwapRequest;
 
-
-
 class SwapRequestController extends Controller
 {
-
     public function store(Request $request)
     {
         // Validate the request data
@@ -18,6 +15,7 @@ class SwapRequestController extends Controller
             'sender_id' => 'required|exists:users,id',
             'receiver_id' => 'required|exists:users,id',
             'item_id' => 'required|exists:items,id',
+            'my_item_id' => 'required|exists:items,id',
         ]);
 
         // Create the swap request

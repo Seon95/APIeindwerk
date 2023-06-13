@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class SwapRequest extends Model
 {
-    protected $fillable = ['sender_id', 'receiver_id', 'item_id'];
+    protected $fillable = ['sender_id', 'receiver_id', 'item_id', 'my_item_id'];
 
     public function sender()
     {
@@ -20,6 +20,11 @@ class SwapRequest extends Model
 
     public function item()
     {
-        return $this->belongsTo(Item::class);
+        return $this->belongsTo(Item::class, 'item_id');
+    }
+
+    public function myItem()
+    {
+        return $this->belongsTo(Item::class, 'my_item_id');
     }
 }
