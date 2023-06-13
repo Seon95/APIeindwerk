@@ -31,7 +31,7 @@ class SwapRequestController extends Controller
     public function index($userId)
     {
         $user = User::findOrFail($userId);
-        $swapRequests = $user->items()->with('swapRequests')->get();
+        $swapRequests = $user->swapRequests;
 
         return response()->json($swapRequests, 200);
     }

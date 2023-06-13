@@ -42,6 +42,17 @@ class User extends Authenticatable
     {
         return $this->hasMany(Item::class);
     }
+
+
+    public function sentSwapRequests()
+    {
+        return $this->hasMany(SwapRequest::class, 'sender_id');
+    }
+
+    public function receivedSwapRequests()
+    {
+        return $this->hasMany(SwapRequest::class, 'receiver_id');
+    }
 }
 
 class Item extends Model

@@ -6,11 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class SwapRequest extends Model
 {
-    protected $fillable = [
-        'sender_id',
-        'receiver_id',
-        'item_id',
-    ];
+    protected $fillable = ['sender_id', 'receiver_id', 'item_id'];
 
     public function sender()
     {
