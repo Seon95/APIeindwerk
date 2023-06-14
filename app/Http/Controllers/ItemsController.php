@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\Item;
 
 
+
 class ItemsController extends Controller
 {
     public function update(Request $request, string $id, string $item_id)
@@ -149,10 +150,17 @@ class ItemsController extends Controller
         ]);
     }
 
-
     public function getItemById(string $itemId)
     {
-        $item = Item::findOrFail($itemId);
+        $user = User::whereHas('items', function ($query) use ($itemId) {
+            $query->where('id', $itemId);
+        })->first();
+
+        if (!$user) {
+            return response()->json(['message' => 'User not found'], 404);
+        }
+
+        $item = $user->items()->findOrFail($itemId);
 
         return response()->json([
             'item' => $item,
