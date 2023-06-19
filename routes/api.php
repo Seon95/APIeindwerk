@@ -35,6 +35,9 @@ Route::get('/items/{itemId}', [ItemsController::class, 'getItemById']);
 
 Route::get('/categories', [CategoryController::class, 'index']);
 
+Route::delete('/swap-requests/{swapRequestId}',  [SwapRequestController::class, 'destroy']);
+
+
 Route::group(['middleware' => ['auth:sanctum']], function () {
     // items routes
     // Route::post('/users/items/{id}', [ItemsController::class, 'item_post'])->middleware('check_user_ownership');

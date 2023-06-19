@@ -35,4 +35,11 @@ class SwapRequestController extends Controller
 
         return response()->json($receivedSwapRequests, 200);
     }
+    public function destroy($swapRequestId)
+    {
+        $swapRequest = SwapRequest::findOrFail($swapRequestId);
+        $swapRequest->delete();
+
+        return response()->json(['message' => 'Swap request deleted successfully'], 200);
+    }
 }
