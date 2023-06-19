@@ -5,6 +5,8 @@ use App\Http\Controllers\ItemsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SwapRequestController;
+use App\Http\Controllers\CategoryController;
+
 
 // public routes
 
@@ -31,6 +33,7 @@ Route::get('/users/{userId}/swap-requests', [SwapRequestController::class, 'rece
 
 Route::get('/items/{itemId}', [ItemsController::class, 'getItemById']);
 
+Route::get('/categories', [CategoryController::class, 'index']);
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
     // items routes
