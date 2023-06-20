@@ -81,7 +81,8 @@ class ItemsController extends Controller
             'description' => 'nullable|string',
             'quantity' => 'required|integer|min:1',
             'category_id' => 'required|integer|exists:categories,id',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Add image validation rules
+            'images' => 'nullable|array|max:3', // Adjusted validation for the 'images' field
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Adjusted validation for the array of images
         ]);
 
         if ($validator->fails()) {
@@ -101,14 +102,20 @@ class ItemsController extends Controller
         ];
 
         // Handle image upload
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imageName = time() . '_' . $image->getClientOriginalName();
+        if ($request->hasFile('images')) {
+            $images = $request->file('images');
+            $imagePaths = [];
 
-            // Store the uploaded image
-            $imagePath = $image->storeAs('images', $imageName, 'public');
+            foreach ($images as $image) {
+                $imageName = time() . '_' . $image->getClientOriginalName();
 
-            $itemData['image'] = $imagePath;
+                // Store the uploaded image
+                $imagePath = $image->storeAs('images', $imageName, 'public');
+
+                $imagePaths[] = $imagePath;
+            }
+
+            $itemData['images'] = $imagePaths;
         }
 
         $item = $user->items()->create($itemData);
@@ -128,10 +135,11 @@ class ItemsController extends Controller
                 'description' => $item->description,
                 'quantity' => $item->quantity,
                 'category_id' => $item->category_id,
-                'image' => $item->image,
+                'images' => $item->images, // Assuming 'images' is a field on the Item model
             ],
         ]);
     }
+
 
 
 

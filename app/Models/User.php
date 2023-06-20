@@ -57,7 +57,7 @@ class User extends Authenticatable
 
 class Item extends Model
 {
-    protected $fillable = ['name', 'category_id', 'quantity', 'description', 'user_id', 'image'];
+    protected $fillable = ['name', 'category_id', 'quantity', 'description', 'user_id', 'images'];
 
     public function user()
     {
