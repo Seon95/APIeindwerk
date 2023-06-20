@@ -81,8 +81,8 @@ class ItemsController extends Controller
             'description' => 'nullable|string',
             'quantity' => 'required|integer|min:1',
             'category_id' => 'required|integer|exists:categories,id',
-            'images' => 'nullable|array|max:3', // Adjusted validation for the 'images' field
-            'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Adjusted validation for the array of images
+            'images' => 'nullable|array|max:3',
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         if ($validator->fails()) {
@@ -115,7 +115,7 @@ class ItemsController extends Controller
                 $imagePaths[] = $imagePath;
             }
 
-            $itemData['images'] = $imagePaths;
+            $itemData['images'] = json_encode($imagePaths);
         }
 
         $item = $user->items()->create($itemData);
@@ -124,7 +124,7 @@ class ItemsController extends Controller
         $items = $user->items()->get()->toArray();
 
         // Update the items field of the user with the updated array
-        $user->items = json_encode($items);
+        $user->items = $items;
         $user->save();
 
         return response()->json([
@@ -135,10 +135,11 @@ class ItemsController extends Controller
                 'description' => $item->description,
                 'quantity' => $item->quantity,
                 'category_id' => $item->category_id,
-                'images' => $item->images, // Assuming 'images' is a field on the Item model
+                'images' => json_decode($item->images), // Assuming 'images' is a JSON field on the Item model
             ],
         ]);
     }
+
 
 
 
