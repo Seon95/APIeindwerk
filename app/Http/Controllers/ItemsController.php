@@ -110,7 +110,7 @@ class ItemsController extends Controller
                 $imageName = time() . '_' . $image->getClientOriginalName();
 
                 // Store the uploaded image
-                $imagePath = $image->storeAs('images', $imageName, 'public');
+                $imagePath = $image->storeAs('', $imageName, 'public');
 
                 $imagePaths[] = $imagePath;
             }
