@@ -43,13 +43,14 @@ Route::get('/categories', [CategoryController::class, 'index']);
 
 Route::delete('/swap-requests/{swapRequestId}',  [SwapRequestController::class, 'destroy']);
 
+Route::put('/items/{id}/{item_id}', [ItemsController::class, 'update']);
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
     // items routes
     // Route::post('/users/items/{id}', [ItemsController::class, 'item_post'])->middleware('check_user_ownership');
 
     // Route::put('/users/{id}/items/{item_id}', [ItemsController::class, 'update'])->middleware('check_user_ownership');
-    Route::put('/items/{id}/{item_id}', [ItemsController::class, 'update'])->middleware('check_user_ownership');
+    // Route::put('/items/{id}/{item_id}', [ItemsController::class, 'update'])->middleware('check_user_ownership');
 
     // Route::delete('/users/{id}/items/{item_id}', [ItemsController::class, 'destroy'])->middleware('check_user_ownership');
     Route::delete('/items/{id}/{item_id}', [ItemsController::class, 'destroy'])->middleware('check_user_ownership');
