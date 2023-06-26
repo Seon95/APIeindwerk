@@ -21,14 +21,20 @@ Route::get('/users/{id}', [AuthController::class, 'show']);
 // search user by name
 Route::get('/users/search/{name}', [AuthController::class, 'search']);
 
-Route::post('/users/items/{id}', [ItemsController::class, 'item_post']);
+// Route::post('/users/items/{id}', [ItemsController::class, 'item_post']);
+Route::post('/items/{id}', [ItemsController::class, 'item_post']);
 
-Route::get('/items/{itemId}/user', [ItemsController::class, 'getUserByItemId']);
+
+// Route::get('/items/{itemId}/user', [ItemsController::class, 'getUserByItemId']);
+Route::get('/user/{itemId}', [ItemsController::class, 'getUserByItemId']);
+
 
 // protected routes
 
 Route::post('/swap-requests', [SwapRequestController::class, 'store']);
-Route::get('/users/{userId}/swap-requests', [SwapRequestController::class, 'receivedSwapRequests']);
+// Route::get('/users/{userId}/swap-requests', [SwapRequestController::class, 'receivedSwapRequests']);
+Route::get('/swap-requests/{userId}', [SwapRequestController::class, 'receivedSwapRequests']);
+
 
 
 Route::get('/items/{itemId}', [ItemsController::class, 'getItemById']);
@@ -41,12 +47,17 @@ Route::delete('/swap-requests/{swapRequestId}',  [SwapRequestController::class, 
 Route::group(['middleware' => ['auth:sanctum']], function () {
     // items routes
     // Route::post('/users/items/{id}', [ItemsController::class, 'item_post'])->middleware('check_user_ownership');
-    Route::put('/users/{id}/items/{item_id}', [ItemsController::class, 'update'])->middleware('check_user_ownership');
-    Route::delete('/users/{id}/items/{item_id}', [ItemsController::class, 'destroy'])->middleware('check_user_ownership');
+
+    // Route::put('/users/{id}/items/{item_id}', [ItemsController::class, 'update'])->middleware('check_user_ownership');
+    Route::put('/items/{id}/{item_id}', [ItemsController::class, 'update'])->middleware('check_user_ownership');
+
+    // Route::delete('/users/{id}/items/{item_id}', [ItemsController::class, 'destroy'])->middleware('check_user_ownership');
+    Route::delete('/items/{id}/{item_id}', [ItemsController::class, 'destroy'])->middleware('check_user_ownership');
+
     // user routes
     Route::delete('/users/{id}', [AuthController::class, 'destroy'])->middleware('check_user_ownership');
     // Route::post('/users/{id}/pic', [AuthController::class, 'storeImage'])->middleware('check_user_ownership');
-    Route::put('/users/{id}/pass', [AuthController::class, 'updatePassword'])->middleware('check_user_ownership');
+    // Route::put('/users/{id}/pass', [AuthController::class, 'updatePassword'])->middleware('check_user_ownership');
     Route::post('/logout', [AuthController::class, 'logout']);
 });
 
