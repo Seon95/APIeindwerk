@@ -175,4 +175,14 @@ class ItemsController extends Controller
             'item' => $item,
         ]);
     }
+    public function searchByName(Request $request)
+    {
+        $name = $request->input('name');
+
+        $items = Item::where('name', 'LIKE', "%{$name}%")->get();
+
+        return response()->json([
+            'items' => $items,
+        ]);
+    }
 }

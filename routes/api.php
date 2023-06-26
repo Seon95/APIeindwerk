@@ -28,6 +28,7 @@ Route::post('/items/{id}', [ItemsController::class, 'item_post']);
 // Route::get('/items/{itemId}/user', [ItemsController::class, 'getUserByItemId']);
 Route::get('/user/{itemId}', [ItemsController::class, 'getUserByItemId']);
 
+Route::post('/items/search', [ItemsController::class, 'searchByName']);
 
 // protected routes
 
