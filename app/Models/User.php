@@ -8,6 +8,16 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+class Item extends Model
+{
+    protected $fillable = ['name', 'category_id', 'quantity', 'description', 'user_id', 'images'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+}
+
 class User extends Authenticatable
 {
     use HasFactory, Notifiable, HasApiTokens;
@@ -52,15 +62,5 @@ class User extends Authenticatable
     public function receivedSwapRequests()
     {
         return $this->hasMany(SwapRequest::class, 'receiver_id');
-    }
-}
-
-class Item extends Model
-{
-    protected $fillable = ['name', 'category_id', 'quantity', 'description', 'user_id', 'images'];
-
-    public function user()
-    {
-        return $this->belongsTo(User::class);
     }
 }
