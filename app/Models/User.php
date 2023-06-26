@@ -7,16 +7,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Item;
 
-class Item extends Model
-{
-    protected $fillable = ['name', 'category_id', 'quantity', 'description', 'user_id', 'images'];
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-}
+
 
 class User extends Authenticatable
 {
