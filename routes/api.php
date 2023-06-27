@@ -8,9 +8,7 @@ use App\Http\Controllers\SwapRequestController;
 use App\Http\Controllers\CategoryController;
 
 
-// public routes
 
-// new user registeration
 Route::post('/register', [AuthController::class, 'register']);
 // user login and token creation
 Route::post('/login', [AuthController::class, 'login']);
@@ -21,45 +19,28 @@ Route::get('/users/{id}', [AuthController::class, 'show']);
 // search user by name
 Route::get('/users/search/{name}', [AuthController::class, 'search']);
 
-// Route::post('/users/items/{id}', [ItemsController::class, 'item_post']);
-Route::post('/items/{id}', [ItemsController::class, 'item_post']);
 
-
-// Route::get('/items/{itemId}/user', [ItemsController::class, 'getUserByItemId']);
 Route::get('/user/{itemId}', [ItemsController::class, 'getUserByItemId']);
 
-Route::post('/items/search', [ItemsController::class, 'searchByName']);
-
-// protected routes
-
-Route::post('/swap-requests', [SwapRequestController::class, 'store']);
-// Route::get('/users/{userId}/swap-requests', [SwapRequestController::class, 'receivedSwapRequests']);
 Route::get('/swap-requests/{userId}', [SwapRequestController::class, 'receivedSwapRequests']);
-
-
 
 Route::get('/items/{itemId}', [ItemsController::class, 'getItemById']);
 
 Route::get('/categories', [CategoryController::class, 'index']);
 
-Route::delete('/swap-requests/{swapRequestId}',  [SwapRequestController::class, 'destroy']);
 
-Route::put('/items/{id}/{item_id}', [ItemsController::class, 'update']);
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
-    // items routes
-    // Route::post('/users/items/{id}', [ItemsController::class, 'item_post'])->middleware('check_user_ownership');
 
-    // Route::put('/users/{id}/items/{item_id}', [ItemsController::class, 'update'])->middleware('check_user_ownership');
-    // Route::put('/items/{id}/{item_id}', [ItemsController::class, 'update'])->middleware('check_user_ownership');
-
-    // Route::delete('/users/{id}/items/{item_id}', [ItemsController::class, 'destroy'])->middleware('check_user_ownership');
+    Route::post('/items/{id}', [ItemsController::class, 'item_post'])->middleware('check_user_ownership');
+    Route::put('/items/{id}/{item_id}', [ItemsController::class, 'update'])->middleware('check_user_ownership');
+    Route::delete('/swap-requests/{swapRequestId}',  [SwapRequestController::class, 'destroy'])->middleware('check_user_ownership');
     Route::delete('/items/{id}/{item_id}', [ItemsController::class, 'destroy'])->middleware('check_user_ownership');
+    Route::post('/items/search', [ItemsController::class, 'searchByName'])->middleware('check_user_ownership');
 
-    // user routes
+    Route::post('/swap-requests', [SwapRequestController::class, 'store'])->middleware('check_user_ownership');
+
     Route::delete('/users/{id}', [AuthController::class, 'destroy'])->middleware('check_user_ownership');
-    // Route::post('/users/{id}/pic', [AuthController::class, 'storeImage'])->middleware('check_user_ownership');
-    // Route::put('/users/{id}/pass', [AuthController::class, 'updatePassword'])->middleware('check_user_ownership');
     Route::post('/logout', [AuthController::class, 'logout']);
 });
 
