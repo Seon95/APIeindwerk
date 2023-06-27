@@ -38,7 +38,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::delete('/items/{id}/{item_id}', [ItemsController::class, 'destroy'])->middleware('check_user_ownership');
     Route::post('/items/search', [ItemsController::class, 'searchByName'])->middleware('check_user_ownership');
 
-    Route::post('/swap-requests', [SwapRequestController::class, 'store'])->middleware('check_user_ownership');
+    Route::post('/swap-requests', [SwapRequestController::class, 'store'])->middleware('auth:sanctum');
 
     Route::delete('/users/{id}', [AuthController::class, 'destroy'])->middleware('check_user_ownership');
     Route::post('/logout', [AuthController::class, 'logout']);
