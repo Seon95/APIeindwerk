@@ -28,6 +28,7 @@ Route::get('/items/{itemId}', [ItemsController::class, 'getItemById']);
 
 Route::get('/categories', [CategoryController::class, 'index']);
 
+Route::get('/images/{filename}', 'ImageController@show');
 
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
