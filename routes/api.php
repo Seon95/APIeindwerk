@@ -35,17 +35,14 @@ Route::get('/images/{filename}', [ImageController::class, 'show']);
 
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
-
-    Route::post('/items/{id}', [ItemsController::class, 'item_post'])->middleware('check_user_ownership');
     Route::put('/items/{id}/{item_id}', [ItemsController::class, 'update'])->middleware('check_user_ownership');
-    Route::delete('/swap-requests/{swapRequestId}',  [SwapRequestController::class, 'destroy'])->middleware('auth:sanctum');
-    Route::delete('/items/{id}/{item_id}', [ItemsController::class, 'destroy'])->middleware('check_user_ownership');
-    Route::post('/items/search', [ItemsController::class, 'searchByName'])->middleware('check_user_ownership');
-
-    Route::post('/swap-requests', [SwapRequestController::class, 'store'])->middleware('auth:sanctum');
-
     Route::delete('/users/{id}', [AuthController::class, 'destroy'])->middleware('check_user_ownership');
+    Route::delete('/items/{id}/{item_id}', [ItemsController::class, 'destroy'])->middleware('check_user_ownership');
+    Route::post('/items/{id}', [ItemsController::class, 'item_post'])->middleware('check_user_ownership');
+    Route::post('/items/search', [ItemsController::class, 'searchByName'])->middleware('check_user_ownership');
     Route::post('/logout', [AuthController::class, 'logout']);
+    Route::delete('/swap-requests/{swapRequestId}',  [SwapRequestController::class, 'destroy'])->middleware('auth:sanctum');
+    Route::post('/swap-requests', [SwapRequestController::class, 'store'])->middleware('auth:sanctum');
 });
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
